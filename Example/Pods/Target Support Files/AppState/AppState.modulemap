@@ -1,0 +1,6 @@
+framework module AppState {
+  umbrella header "AppState-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "AppState",
+  "version": "0.1.0",
+  "summary": "A short description of AppState.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/AppState",
+  "license": "MIT",
+  "authors": {
+    "Viet Phan": "viet.phanhong@asnet.com.vn"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/AppState.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "AppState": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

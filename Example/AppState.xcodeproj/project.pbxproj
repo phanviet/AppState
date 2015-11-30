@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0034FF1C0C4F730008F604 /* AppWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0034FE1C0C4F730008F604 /* AppWorkflow.swift */; settings = {ASSET_TAGS = (); }; };
+		1B0035011C0C4FBD0008F604 /* SignInWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0035001C0C4FBD0008F604 /* SignInWorkflow.swift */; settings = {ASSET_TAGS = (); }; };
+		1B0035031C0C50350008F604 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0035021C0C50350008F604 /* SignInViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1B0035051C0C50BD0008F604 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0035041C0C50BD0008F604 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -30,6 +34,10 @@
 /* Begin PBXFileReference section */
 		0A1DF190F9C36EE50B2F39C0 /* Pods-AppState_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppState_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppState_Example/Pods-AppState_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		0D587C5CD4FBDFE09FBF5B03 /* Pods_AppState_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppState_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0034FE1C0C4F730008F604 /* AppWorkflow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWorkflow.swift; sourceTree = "<group>"; };
+		1B0035001C0C4FBD0008F604 /* SignInWorkflow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWorkflow.swift; sourceTree = "<group>"; };
+		1B0035021C0C50350008F604 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1B0035041C0C50BD0008F604 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		33FB18A6BF57499ED4B76202 /* Pods-AppState_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppState_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppState_Tests/Pods-AppState_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3EDDB8A85D3067AEC59EF01F /* AppState.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AppState.podspec; path = ../AppState.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AppState_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppState_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,7 +47,7 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = AppState_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACE51AFB9204008FA782 /* AppState_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppState_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6DB74996F7A6923BD3FB4F01 /* Pods-AppState_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppState_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppState_Example/Pods-AppState_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* AppState_Example.app */,
-				607FACE51AFB9204008FA782 /* Tests.xctest */,
+				607FACE51AFB9204008FA782 /* AppState_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +116,10 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				1B0034FE1C0C4F730008F604 /* AppWorkflow.swift */,
+				1B0035001C0C4FBD0008F604 /* SignInWorkflow.swift */,
+				1B0035021C0C50350008F604 /* SignInViewController.swift */,
+				1B0035041C0C50BD0008F604 /* WelcomeViewController.swift */,
 			);
 			name = "Example for AppState";
 			path = AppState;
@@ -200,7 +212,7 @@
 			);
 			name = AppState_Tests;
 			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* Tests.xctest */;
+			productReference = 607FACE51AFB9204008FA782 /* AppState_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -209,6 +221,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -359,6 +372,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				1B0034FF1C0C4F730008F604 /* AppWorkflow.swift in Sources */,
+				1B0035011C0C4FBD0008F604 /* SignInWorkflow.swift in Sources */,
+				1B0035051C0C50BD0008F604 /* WelcomeViewController.swift in Sources */,
+				1B0035031C0C50350008F604 /* SignInViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
