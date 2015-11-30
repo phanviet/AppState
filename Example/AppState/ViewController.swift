@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AppState
 
 class ViewController: UIViewController {
   
