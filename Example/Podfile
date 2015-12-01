@@ -1,15 +1,17 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'AppState_Example', :exclusive => true do
-  pod "AppState", :path => "../"
-end
+pod "AppState", "~> 0.1.0"
 
-target 'AppState_Tests', :exclusive => true do
-  pod "AppState", :path => "../"
-
-  # pod 'Quick', '~> 0.3.1'
-  # pod 'Nimble'
-  # pod 'FBSnapshotTestCase'
-  # pod 'Nimble-Snapshots'
-end
+#target 'AppState_Example', :exclusive => true do
+#  pod "AppState", :path => "../"
+#end
+#
+#target 'AppState_Tests', :exclusive => true do
+#  pod "AppState", :path => "../"
+#
+#  # pod 'Quick', '~> 0.3.1'
+#  # pod 'Nimble'
+#  # pod 'FBSnapshotTestCase'
+#  # pod 'Nimble-Snapshots'
+#end

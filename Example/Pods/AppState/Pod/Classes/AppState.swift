@@ -14,13 +14,13 @@ public struct AppStateEvent {
   let from: [String]
   let to: String
   
-  public init(name: String, from: [String], to: String) {
+  init(name: String, from: [String], to: String) {
     self.name = name
     self.from = from
     self.to = to
   }
   
-  public init(name: String, from: String, to: String) {
+  init(name: String, from: String, to: String) {
     self.init(name: name, from: [from], to: to)
   }
 }
@@ -28,7 +28,7 @@ public struct AppStateEvent {
 public typealias AppEvents = [AppStateEvent]
 public typealias StateContext = [String: AnyObject]
 
-@objc public protocol AppStateDelegate {
+@objc protocol AppStateDelegate {
   optional func onLeaveState(eventName: String, currentState: String, from: String, to: String, context: StateContext?)
   optional func onEnterState(eventName: String, currentState: String, from: String, to: String, context: StateContext?)
 }
@@ -37,7 +37,7 @@ public class AppState {
 
   //---------------------------------------------------------------------------
   
-  public enum Result {
+  enum Result {
   
     // the event transitioned successfully from one state to another
     case Succeeded
@@ -61,7 +61,7 @@ public class AppState {
   // { state: [ event ] }
   var transition = [String: [String]]()
   
-  public init(initialState: String, events: AppEvents) {
+  init(initialState: String, events: AppEvents) {
     self.initialState = initialState
     self.events = events
     
@@ -74,32 +74,32 @@ public class AppState {
   // MARK: - Instance
   
   // Add a delegate
-  public func addDelegate(delegate: AppStateDelegate, forState state: String) {
+  func addDelegate(delegate: AppStateDelegate, forState state: String) {
     delegateDict[state] = delegate
   }
   
   // Remove all delegates
-  public func removeAllDelegates() {
+  func removeAllDelegates() {
     delegateDict.removeAll(keepCapacity: false)
   }
   
   // Remove a delegate
-  public func removeDelegateForState(state: String) {
+  func removeDelegateForState(state: String) {
     delegateDict.removeValueForKey(state)
   }
   
   // Get current state
-  public func getCurrentState() -> String {
+  func getCurrentState() -> String {
     return _currentState
   }
   
   // Return true if state is the current state
-  public func isCurrentState(stateName: String) -> Bool {
+  func isCurrentState(stateName: String) -> Bool {
     return stateName == getCurrentState()
   }
   
   // Return list of events that are allowed from the current state
-  public func getTransitions() -> [String] {
+  func getTransitions() -> [String] {
     var transitions = [String]()
     if let eventNames = transition[getCurrentState()] {
       transitions = eventNames
@@ -109,7 +109,7 @@ public class AppState {
   }
   
   // Transit to other state from current state by event name
-  public func transitTo(eventName: String, context: StateContext? = nil) -> Result {
+  func transitTo(eventName: String, context: StateContext? = nil) -> Result {
     if canTransitTo(eventName) {
       return _transitTo(eventName, context: context)
     }
@@ -118,7 +118,7 @@ public class AppState {
   }
   
   // Return true if event can be fired in the current state
-  public func canTransitTo(eventName: String) -> Bool {
+  func canTransitTo(eventName: String) -> Bool {
     if let eventNames = transition[getCurrentState()] {
       return eventNames.contains(eventName)
     }
@@ -127,14 +127,14 @@ public class AppState {
   }
   
   // Adding Events to State Machine
-  public func addEvents(events: AppEvents) {
+  func addEvents(events: AppEvents) {
     for event in events {
       addEvent(event)
     }
   }
   
   // Adding an Event to State Machine
-  public func addEvent(event: AppStateEvent) {
+  func addEvent(event: AppStateEvent) {
     if map[event.name] == nil {
       map[event.name] = [:]
     }
@@ -155,7 +155,7 @@ public class AppState {
   }
   
   // Update destination step if have
-  public func updateState(state: String, context: StateContext? = nil) -> Result {
+  func updateState(state: String, context: StateContext? = nil) -> Result {
     let eventName = eventNameForState(state)
     if eventName != eventNotFound {
       return _transitTo(eventName, context: context)
@@ -165,7 +165,7 @@ public class AppState {
   }
   
   // Register View Controller for state
-  public func registerViewController(viewController: UIViewController, forState state: String) {
+  func registerViewController(viewController: UIViewController, forState state: String) {
     if let viewControllerDelegate = viewController as? AppStateDelegate {
       self.addDelegate(viewControllerDelegate, forState: state)
     }

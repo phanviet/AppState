@@ -2,11 +2,7 @@ PODS:
   - AppState (0.1.0)
 
 DEPENDENCIES:
-  - AppState (from `../`)
-
-EXTERNAL SOURCES:
-  AppState:
-    :path: "../"
+  - AppState (~> 0.1.0)
 
 SPEC CHECKSUMS:
   AppState: 93e6c1edb6a3d16170da46d4ea5cd77ae5564339
