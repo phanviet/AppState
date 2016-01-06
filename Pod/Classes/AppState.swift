@@ -50,8 +50,9 @@ public class AppState {
   
   let initialState: String
   let events: AppEvents
-  var delegateDict = [String: AppStateDelegate]()
+
   
+  private var _delegateDict = [String: AppStateDelegate]()
   private var _currentState: String
   private var eventNotFound = ""
   
@@ -75,22 +76,26 @@ public class AppState {
   
   // Add a delegate
   public func addDelegate(delegate: AppStateDelegate, forState state: String) {
-    delegateDict[state] = delegate
+    _delegateDict[state] = delegate
   }
   
   // Remove all delegates
   public func removeAllDelegates() {
-    delegateDict.removeAll(keepCapacity: false)
+    _delegateDict.removeAll(keepCapacity: false)
   }
   
   // Remove a delegate
   public func removeDelegateForState(state: String) {
-    delegateDict.removeValueForKey(state)
+    _delegateDict.removeValueForKey(state)
   }
   
   // Get current state
   public func getCurrentState() -> String {
     return _currentState
+  }
+
+  public func getDelegate() -> [String: AppStateDelegate] {
+    return _delegateDict
   }
   
   // Return true if state is the current state
@@ -174,7 +179,7 @@ public class AppState {
   // MARK: - private
   // Return true if it's state delegate
   private func _isStateHasDelegate(state: String) -> Bool {
-    if let _ = delegateDict[state] {
+    if let _ = _delegateDict[state] {
       return true
     }
     return false
@@ -203,14 +208,14 @@ public class AppState {
       
       // Call delegate on leave state
       if isStateHasDelegate {
-        delegateDict[to]?.onLeaveState?(eventName, currentState: getCurrentState(), from: from, to: to, context: context)
+        _delegateDict[to]?.onLeaveState?(eventName, currentState: getCurrentState(), from: from, to: to, context: context)
       }
       
       _currentState = to
       
       // Call delegate on enter state
       if isStateHasDelegate {
-        delegateDict[to]?.onEnterState?(eventName, currentState: getCurrentState(), from: from, to: to, context: context)
+        _delegateDict[to]?.onEnterState?(eventName, currentState: getCurrentState(), from: from, to: to, context: context)
       }
       
       return Result.Succeeded
